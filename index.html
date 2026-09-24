@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Radnaq + Panther · Conferência de vendas</title>
+<style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#14273b;background:#f1f5f8}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}header{background:#10273b;color:#fff;padding:25px max(24px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}header h1{font-size:24px;letter-spacing:-.5px;margin:4px 0}header small{color:#b7c9d4}main{max-width:1228px;margin:auto;padding:26px 24px 60px}.badge{border:1px solid #536f7d;padding:8px 12px;border-radius:99px;font-size:12px}.grid{display:grid;grid-template-columns:1fr 1.5fr;gap:18px}.panel{background:#fff;border:1px solid #dfe7ed;border-radius:17px;box-shadow:0 8px 24px #102a3c0d;padding:22px;margin-bottom:18px}.panel h2{font-size:17px;margin:0 0 5px}.muted{color:#627589;font-size:12px;margin:0 0 22px;line-height:1.5}label{display:block;font-size:11px;letter-spacing:.4px;color:#526475;font-weight:800;margin:15px 0 7px}input,select{width:100%;padding:11px 12px;border:1px solid #d2dee7;border-radius:10px;background:#fff;color:#183047;outline:none}input:focus,select:focus{border-color:#1b8b5b;box-shadow:0 0 0 3px #1b8b5b22}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;background:#147d50;color:#fff;border-radius:10px;padding:12px 16px;font-weight:800}.btn:hover:not(:disabled){background:#106441}.btn:disabled{background:#aebeb8;cursor:not-allowed}.btn.outline{background:#fff;border:1px solid #d5e0e6;color:#354d60}.btn.outline:hover{background:#f3f8f6}.wide{width:100%;margin-top:20px}.ratebox{background:#eef7f1;border:1px solid #d0e8d8;border-radius:11px;padding:12px 14px;margin:20px 0}.ratebox label{margin:0 0 8px;color:#176343}.ratebox .rate{display:flex;gap:9px;align-items:center}.ratebox input{max-width:100px;color:#176343;font-weight:800;font-size:20px;padding:7px}.ratebox small{display:block;font-size:11px;color:#5a7768;margin-top:7px}.ratebox span{font-weight:800;color:#176343}.notice{border-radius:11px;padding:13px 15px;background:#f2f5f7;border:1px solid #e0e7ec;color:#52687a;font-weight:700;font-size:13px}.notice.good{background:#e9f8ee;border-color:#a5dab5;color:#137346}.notice.bad{background:#fff0ed;border-color:#edb7ad;color:#ae3428}.notice.warn{background:#fff8ea;border-color:#f0dbad;color:#916811}.tablewrap{overflow:auto}table{width:100%;min-width:650px;border-collapse:collapse}th{text-align:left;background:#f5f8fa;font-size:11px;color:#62778a;padding:11px}td{border-bottom:1px solid #e9eef2;padding:10px;vertical-align:middle;font-size:12px}td strong{display:block;font-size:12px}td small{display:block;color:#6b7b8b;margin-top:3px;line-height:1.4}td input{min-width:70px;padding:8px;width:100%}.price{min-width:105px}.qty{min-width:78px}.result{min-width:165px}.result b{font-size:11px}.goodtext{color:#177b4c}.badtext{color:#bb3d2b}.mutedtext{color:#84929c}.remove{border:0;background:none;color:#b94436;font-size:22px}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}.stat{background:#f5f8fa;border-radius:11px;padding:14px}.stat span{display:block;font-size:11px;color:#617585;margin-bottom:7px}.stat b{font-size:21px;font-variant-numeric:tabular-nums}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.footer{font-size:11px;line-height:1.5;color:#758492;margin-top:20px}.error{color:#af3429;font-size:12px;min-height:16px}@media(max-width:920px){.grid{grid-template-columns:1fr}}@media(max-width:560px){header{padding:22px 24px;align-items:flex-start;flex-direction:column}.summary{grid-template-columns:1fr}.panel{padding:18px}}
+.product-search{position:relative}.product-search input[type=search]{padding-right:35px}.suggestions{position:absolute;top:calc(100% + 5px);left:0;right:0;z-index:10;max-height:290px;overflow:auto;background:#fff;border:1px solid #d2dee7;border-radius:12px;box-shadow:0 14px 30px #10273b25}.suggestions[hidden]{display:none}.suggestion{display:block;width:100%;border:0;border-bottom:1px solid #edf1f4;background:#fff;padding:11px 13px;text-align:left;color:#193047}.suggestion:hover,.suggestion.active{background:#e9f7ef}.suggestion strong{display:block;color:#126442;font-size:12px}.suggestion small{display:block;color:#627589;font-size:11px;margin-top:3px;line-height:1.4}.suggestion-empty{padding:13px;color:#677a8b;font-size:12px}
+
+.ratebox input[readonly]{background:#eaf3ec;color:#537364;cursor:default}.margin-unlock{margin-top:10px;width:100%;font-size:12px}.margin-unlock:disabled{opacity:.8;cursor:default}
+#marginDialog{border:1px solid #dce7e0;border-radius:17px;padding:25px;width:min(430px,calc(100vw - 30px));box-shadow:0 22px 70px #09291d45;color:#142c22}#marginDialog::backdrop{background:#091c19a8}#marginDialog h2{font-size:19px;margin:0 0 9px}#marginDialog p{font-size:13px;line-height:1.5;color:#5f7167}#marginDialog label{margin-top:20px}#marginDialog .error{color:#b32e2e;min-height:20px;margin:8px 0}.dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}
+.suggestions{top:calc(100% + 7px);max-height:410px;padding:6px;border-color:#d9e6de;border-radius:15px;box-shadow:0 20px 45px #142e3c27}.suggestions-header{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 11px 12px;color:#758894;font-size:10px;font-weight:800;letter-spacing:.8px}.suggestions-header span:last-child{font-weight:500;letter-spacing:0}.suggestion{display:flex;align-items:center;gap:12px;border:1px solid transparent;border-bottom:1px solid #edf2f3;border-radius:10px;padding:12px;margin:1px 0;transition:background .14s,border-color .14s,transform .14s}.suggestion:hover,.suggestion.active{background:#eef9f3;border-color:#d3e9dc;transform:translateX(2px)}.suggestion-icon{display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;border-radius:11px;background:#e5f3eb;color:#157b53;font-size:17px;font-weight:850}.suggestion-icon.panther{background:#e9effb;color:#3d62a2}.suggestion-body{min-width:0;flex:1}.suggestion-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.suggestion .suggestion-code{display:inline;color:#193f36;font-size:12px;line-height:1.3}.suggestion .suggestion-description{display:block;margin-top:4px;font-size:11px;color:#587080;line-height:1.4;white-space:normal}.suggestion-brand{padding:3px 6px;border-radius:5px;background:#e5f4ec;color:#237450;font-size:9px;font-weight:800;letter-spacing:.35px}.suggestion-brand.panther{background:#eaf0fa;color:#466ca8}.suggestion-tags{display:flex;gap:5px;margin-top:6px}.suggestion-tags span{padding:2px 6px;border-radius:5px;background:#f2f6f8;color:#687e8c;font-size:9px;font-weight:650}.suggestion-arrow{font-size:17px;color:#96b5a5}.suggestion mark{background:#c7f4d8;color:#125b3b;border-radius:2px;padding:0 1px}.suggestion-empty{padding:20px 13px 25px;text-align:center;line-height:1.6}.suggestion-empty strong{display:block;color:#344f5e;font-size:12px}.suggestion-empty span{color:#748896}.suggestions-footer{padding:9px 12px;color:#81929b;font-size:10px;border-top:1px solid #edf2f3}.suggestions-footer kbd{background:#edf2f4;border:1px solid #dfe9ed;border-radius:4px;padding:2px 4px;font:inherit}@media(max-width:560px){.suggestions{max-height:min(55vh,390px)}.suggestions-header span:last-child,.suggestions-footer{display:none}.suggestion{gap:9px;padding:10px}.suggestion-icon{width:34px;height:34px;flex-basis:34px}}
+.header-actions{display:flex;align-items:center;gap:10px}.catalog-trigger{font-size:12px;white-space:nowrap}.catalog-auth,.catalog-dialog{border:1px solid #dce6eb;border-radius:17px;background:#fff;color:#183141;box-shadow:0 28px 80px #10293648}.catalog-auth::backdrop,.catalog-dialog::backdrop{background:#0b2131ad}.catalog-auth{padding:25px;width:min(430px,calc(100vw - 25px))}.catalog-auth h2{font-size:19px;margin:0 0 9px}.catalog-auth p{font-size:13px;line-height:1.5;color:#667887}.catalog-dialog{padding:0;width:min(1070px,calc(100vw - 28px));max-width:none;max-height:calc(100vh - 38px)}.catalog-shell{padding:25px}.catalog-head{display:flex;align-items:start;justify-content:space-between;gap:16px}.catalog-head h2{font-size:21px;margin:5px 0}.catalog-head p,.catalog-footnote{font-size:12px;color:#718492;line-height:1.5;margin:0}.catalog-eyebrow{color:#178458;font-size:10px;font-weight:850;letter-spacing:1px}.catalog-close{border:0;background:#f2f5f7;color:#617482;border-radius:9px;font-size:23px;width:34px;height:34px;line-height:1}.catalog-close:hover{background:#e5ecef}.catalog-tools{display:flex;gap:9px;flex-wrap:wrap;border-bottom:1px solid #e7eef2;padding:20px 0}.catalog-tools .btn{font-size:12px;padding:10px 13px}.catalog-layout{display:grid;grid-template-columns:minmax(245px,.75fr) minmax(0,1.25fr);gap:19px;padding-top:19px}.catalog-list{border:1px solid #e0e9ee;border-radius:12px;padding:13px;background:#fafcfd}.catalog-list label{margin:0 0 7px}.catalog-count{font-size:11px;color:#8293a0;margin:11px 1px}.catalog-rows{height:min(53vh,500px);overflow:auto}.catalog-row{display:block;text-align:left;width:100%;border:1px solid transparent;border-bottom-color:#e8eff2;background:transparent;padding:10px 11px;border-radius:9px}.catalog-row:hover,.catalog-row.active{background:#eaf7f0;border-color:#cce6d7}.catalog-row strong{display:block;font-size:12px;color:#193e33}.catalog-row small{display:block;color:#687d8a;font-size:10px;margin-top:4px;line-height:1.35}.catalog-editor{padding:2px 4px 0}.catalog-editor h3{font-size:16px;margin:0 0 4px}.catalog-editor>p:not(.error){font-size:12px;color:#7b8b95;margin:0 0 15px}.catalog-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 13px}.catalog-fields .full{grid-column:1/-1}.catalog-fields label{font-size:10px}.catalog-fields input,.catalog-fields select{height:43px}.save-product{width:100%;margin-top:9px}.catalog-footnote{margin-top:18px;background:#f4f8f9;border-radius:9px;padding:10px 12px}@media(max-width:760px){header{gap:10px}.header-actions .badge{display:none}.catalog-layout{grid-template-columns:1fr}.catalog-rows{height:150px}.catalog-shell{padding:18px}.catalog-dialog{max-height:calc(100vh - 20px)}.catalog-tools .btn{flex:1 1 auto}}@media(max-width:480px){.header-actions{width:100%}.catalog-trigger{width:100%}.catalog-fields{grid-template-columns:1fr}.catalog-fields .full{grid-column:auto}}
+.catalog-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.catalog-row-info{flex:1;min-width:0;border:0;background:transparent;padding:0;text-align:left;cursor:pointer}.catalog-row-info strong,.catalog-row-info small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.catalog-row-actions{display:flex;gap:3px;flex-shrink:0}.catalog-row-actions button{border:1px solid #dbe7e2;border-radius:6px;background:#fff;color:#406a56;font-size:10px;padding:5px 6px}.catalog-row-actions button:hover{background:#def2e7}.catalog-row-actions .delete-product{color:#b04438;border-color:#eed8d4}.catalog-row-actions .delete-product:hover{background:#fff0eb}@media(max-width:480px){.catalog-row-actions button{font-size:10px;padding:5px}}
+.database-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f1f7fa;border:1px solid #dce8ec;border-radius:10px;padding:10px 12px;margin:12px 0 0}.database-panel p{margin:3px 0 0;color:#557080;font-size:11px;line-height:1.4}.database-panel strong{font-size:12px}.database-panel button{font-size:11px;padding:9px;flex-shrink:0}@media(max-width:600px){.database-panel{align-items:stretch;flex-direction:column}}
+</style></head><body>
+<header><div><small>RADNAQ + PANTHER / EQUIPE DE VENDAS</small><h1>Conferência de vendas</h1><small>Simule, ajuste os itens e confira antes de finalizar.</small></div><div class="header-actions"><span class="badge" id="cloudStatus" role="status">Conectando ao banco MTX…</span><button id="openCatalog" class="btn outline catalog-trigger" type="button">⚙ Gerenciar produtos e preços</button></div></header>
+<main><div class="grid"><section class="panel"><h2>Adicionar produto</h2><p class="muted">Digite código, viscosidade ou parte da descrição. Você poderá editar a quantidade e o preço na lista.</p><label for="productSearch">BUSCAR PRODUTO</label><div class="product-search"><input id="productSearch" type="search" autocomplete="off" placeholder="Ex.: MO15, PA00429 ou 5W30" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions"><input id="product" type="hidden"><div id="suggestions" class="suggestions" role="listbox" hidden></div></div><div class="fields"><div><label for="quantity">QUANTIDADE</label><input id="quantity" type="number" min="1" step="1" value="1"></div><div><label for="unitPrice">PREÇO POR UNIDADE (R$)</label><input id="unitPrice" type="text" inputmode="decimal" placeholder="0,00"></div></div><button class="btn wide" id="add">Adicionar à venda</button><p class="error" id="formError" role="alert"></p><div class="ratebox"><label for="margin">MARGEM MÍNIMA DESTA VENDA</label><div class="rate"><input id="margin" type="number" min="0" max="99.99" step="0.01" value="26" readonly aria-describedby="marginHint"><span>%</span></div><small id="marginHint">Padrão: 26%. Para alterar, use a senha de autorização.</small><button id="unlockMargin" class="btn outline margin-unlock" type="button">🔒 Alterar margem</button></div><div class="notice" id="notice">Adicione um produto para começar.</div></section>
+<section class="panel"><h2>Itens da venda <span id="counter">(0)</span></h2><p class="muted">Edite os campos diretamente. A aprovação é recalculada após cada alteração.</p><div class="tablewrap"><table><thead><tr><th>PRODUTO</th><th>QTD.</th><th>PREÇO UN. (R$)</th><th>CONFERÊNCIA</th><th></th></tr></thead><tbody id="items"><tr><td colspan="5" style="text-align:center;padding:29px;color:#8292a0">Nenhum item adicionado.</td></tr></tbody></table></div><div class="summary"><div class="stat"><span>VALOR TOTAL DA VENDA</span><b id="total">—</b></div><div class="stat"><span>FALTA PARA LIBERAR</span><b id="missing">—</b></div></div><div class="actions"><button class="btn" id="authorize" disabled>Conferir e autorizar</button><button class="btn outline" id="clear">Limpar venda</button><button class="btn outline" id="copy" disabled>Copiar resumo</button></div><p class="footer">A liberação é uma conferência visual neste arquivo. Ela não lança a venda no ERP. Confirme o estoque no sistema antes de concluir.</p></section></div></main>
+<dialog id="marginDialog" aria-labelledby="marginTitle"><form id="marginForm"><h2 id="marginTitle">Autorizar mudança da margem</h2><p>Digite a senha para aumentar ou diminuir a margem desta venda.</p><label for="marginPassword">SENHA</label><input id="marginPassword" type="password" inputmode="numeric" autocomplete="off" required><p class="error" id="marginError" role="alert"></p><div class="dialog-actions"><button type="button" class="btn outline" id="cancelMargin">Cancelar</button><button type="submit" class="btn">Liberar alteração</button></div></form></dialog>
+<dialog id="catalogAuth" class="catalog-auth" aria-labelledby="catalogAuthTitle"><form id="catalogAuthForm"><h2 id="catalogAuthTitle">Acesso ao catálogo</h2><p>Digite a senha para cadastrar produtos e atualizar os valores.</p><label for="catalogPassword">SENHA</label><input id="catalogPassword" type="password" inputmode="numeric" autocomplete="off" required><p id="catalogAuthError" class="error" role="alert"></p><div class="dialog-actions"><button id="cancelCatalogAuth" type="button" class="btn outline">Cancelar</button><button type="submit" class="btn">Abrir catálogo</button></div></form></dialog>
+<dialog id="catalogDialog" class="catalog-dialog" aria-labelledby="catalogTitle"><div class="catalog-shell"><div class="catalog-head"><div><span class="catalog-eyebrow">ADMINISTRAÇÃO</span><h2 id="catalogTitle">Produtos e preços</h2><p>Atualize os valores do cálculo e cadastre novos itens para a busca.</p></div><button id="closeCatalog" class="catalog-close" type="button" aria-label="Fechar administração">×</button></div><div class="catalog-tools"><button id="newProduct" type="button" class="btn">＋ Novo produto</button><button id="duplicateProduct" type="button" class="btn outline">⧉ Copiar produto selecionado</button><button id="downloadCatalogHtml" type="button" class="btn outline">↓ Baixar HTML atualizado</button></div><div class="database-panel"><div><strong>Banco MTX · catálogo do simulador</strong><p id="databaseInfo" role="status">Verificando acesso ao Firestore…</p></div><button id="retryDatabase" type="button" class="btn outline">↻ Testar conexão</button></div><div class="catalog-layout"><div class="catalog-list"><label for="catalogSearch">PROCURAR NO CATÁLOGO</label><input id="catalogSearch" type="search" placeholder="Código, marca ou descrição"><div id="catalogCount" class="catalog-count"></div><div id="catalogRows" class="catalog-rows"></div></div><form id="productForm" class="catalog-editor"><h3 id="editorTitle">Selecione um produto</h3><p id="editorHint">Escolha um item da lista ou clique em Novo produto.</p><div class="catalog-fields"><div><label for="editCode">CÓDIGO DO FABRICANTE</label><input id="editCode" required maxlength="80" autocomplete="off"></div><div><label for="editBrand">MARCA</label><select id="editBrand"><option value="RADNAQ">RADNAQ</option><option value="PANTHER">PANTHER</option><option value="OUTRA">OUTRA</option></select></div><div class="full"><label for="editDescription">DESCRIÇÃO</label><input id="editDescription" required maxlength="260" autocomplete="off"></div><div><label for="editCost">CUSTO UNITÁRIO (R$)</label><input id="editCost" inputmode="decimal" required placeholder="0,00"></div><div><label for="editListPrice">PREÇO SUGERIDO (R$)</label><input id="editListPrice" inputmode="decimal" placeholder="Opcional"></div><div><label for="editStock">ESTOQUE DE REFERÊNCIA</label><input id="editStock" type="number" min="0" step="1" required value="0"></div></div><p id="editorError" class="error" role="alert"></p><button id="saveProduct" class="btn save-product" type="submit">Salvar produto</button></form></div><p class="catalog-footnote">Produtos e preços são sincronizados com o banco MTX. O HTML baixado contém uma cópia do catálogo para consulta sem internet; novas alterações exigem conexão.</p></div></dialog>
+<script id="catalogData" type="application/json">[{"code":"MO15-12","description":"OLEO RADNAQ 0W20 API SN GASOLINA CX12/1L - (3)","stock":60,"cost_cents":2400},{"code":"MO53-24","description":"OLEO RADNAQ 10W30 4T API SEMI-SINTETICO MOTO CX24/1L -(3)","stock":48,"cost_cents":2156},{"code":"MO12-12","description":"OLEO RADNAQ 10W40 API SN SINTETICO GASOLINA CX12/1L - (3)","stock":23,"cost_cents":2095},{"code":"MO24-20","description":"OLEO RADNAQ 140 API GL5 MINERAL TRANSMISSAO 1/20L -","stock":2,"cost_cents":31280},{"code":"MO24-24 (140)","description":"OLEO RADNAQ 140 API GL5 TRANSMISSAO MINERAL CX24/1L -","stock":7,"cost_cents":1745},{"code":"MO22-24 (15W40)","description":"OLEO RADNAQ 15W40 API CI4 DIESEL CX24/1L -","stock":3,"cost_cents":1897},{"code":"MO02-24","description":"OLEO RADNAQ 15W40 API SM MOTOROIL SEMI-SINTETICO GAS CX24/1L -","stock":5,"cost_cents":1976},{"code":"MO28-24","description":"OLEO RADNAQ 20W50 4T API SL MINERAL MOTO CX24/1L -(3)","stock":144,"cost_cents":1668},{"code":"MO21-24 (20W50)","description":"OLEO RADNAQ 20W50 API SL MINERAL GASOLINA CX24/1L - (4)","stock":1196,"cost_cents":1628},{"code":"MO70-24A","description":"OLEO RADNAQ 2T MOTO CX24/200ML -","stock":13,"cost_cents":309},{"code":"MO60-04","description":"OLEO RADNAQ 5W30 API SN ACEA C2/C3 DPF SINTETICO DIESEL GALAO 5L -(4)","stock":39,"cost_cents":13370},{"code":"MO13-12","description":"OLEO RADNAQ 5W30 API SN GF5 SINTETICO GAS CX12/1L - (3)","stock":232,"cost_cents":2163},{"code":"MO19-12","description":"OLEO RADNAQ 5W30 API SQ SINTETICO GAS CX12/1L - (3)","stock":72,"cost_cents":1689},{"code":"MO10-12","description":"OLEO RADNAQ 5W40 API SN SINTETICO GAS CX 12/1L - (3)","stock":57,"cost_cents":2193},{"code":"MO03-24 (75W80)","description":"OLEO RADNAQ 75W80 API GL5 SEMI-SINTETICO TRANSMISSAO CX24/1L - (3)","stock":127,"cost_cents":1712},{"code":"MO04-20","description":"OLEO RADNAQ 75W85 GL5 SEMI-SINTETICO TRANSMISSAO 1/20L -","stock":1,"cost_cents":31420},{"code":"MO04-24 (75W85)","description":"OLEO RADNAQ 75W85 GL5 SEMI-SINTETICO TRANSMISSAO CX24/1L -(3)","stock":105,"cost_cents":1793},{"code":"MO05-24 (75W90)","description":"OLEO RADNAQ 75W90 API GL5 TRANSMISSAO CX24/1L -(3)","stock":105,"cost_cents":1896},{"code":"MO05-20","description":"OLEO RADNAQ 75W90 GL5 SEMI-SINTETICO TRANSMISSAO 1/20L -","stock":1,"cost_cents":31980},{"code":"MO32-20","description":"OLEO RADNAQ 80 API GL4 MINERAL TRANSMISSAO 1/20L -","stock":4,"cost_cents":29080},{"code":"MO32-24 (80W)","description":"OLEO RADNAQ 80W EP API GL4 MINERAL TRANSMISSAO CX24/1L -","stock":154,"cost_cents":1613},{"code":"MO33-20","description":"OLEO RADNAQ 85W140 API GL5 MINERAL TRANSMISSAO 1/20L -","stock":1,"cost_cents":31500},{"code":"MO33-24 (85W40)","description":"OLEO RADNAQ 85W140 EP API GL5 MINERAL TRANSMISSAO CX24/1L -(3)","stock":43,"cost_cents":1734},{"code":"MO25-24 (90W)","description":"OLEO RADNAQ 90 API GL5 MINERAL TRANSMISSAO CX24/1L -(3)","stock":134,"cost_cents":1699},{"code":"RQ7050/24 (DEXR","description":"OLEO RADNAQ HIDRAULICO ATF DEXRON III CX24/1L -","stock":712,"cost_cents":1643},{"code":"RQ7052/24","description":"OLEO RADNAQ HIDRAULICO ATF DEXRON III CX24/200ML -","stock":17,"cost_cents":490},{"code":"MO25-20","description":"OLEO RADNAQ SAE 90 API GL5 MINERAL TRANSMISSAO 1/20L -","stock":2,"cost_cents":30800},{"code":"PA00406 (15W40)","description":"OLEO PANTHER 15W40 CI-4 TDX TURBO DIESEL (1X20L) - (3)","stock":17,"cost_cents":30900},{"code":"PA00429 (15W40)","description":"OLEO PANTHER 15W40 API SL ADVANCE SEMI-SINTETICO GAS CX24 - (3)","stock":1180,"cost_cents":1869},{"code":"PA00400","description":"OLEO PANTHER HIDRAULICO 68 API HL -BALDE 20L - (10)","stock":90,"cost_cents":21990},{"code":"PA00427","description":"OLEO PANTHER 15W40 CI-4 TDX TURBO DIESEL (24X1) - (6)","stock":228,"cost_cents":1594},{"code":"PA00424 (5W30)","description":"OLEO PANTHER 5W30 API SN ULTA SINTETICO CX24/1L -","stock":1,"cost_cents":1983},{"code":"PA00310","description":"OLEO PANTHER 80W90 API GL5 ENERGY - CX 24/1L - (4)","stock":72,"cost_cents":2360},{"code":"PA00603","description":"OLEO PANTHER ATF/TASA 20W ENERGY - BALDE 20L - (2)","stock":2,"cost_cents":39875},{"code":"PA00405","description":"OLEO PANTHER 15W40 API CH4 ENERGY TDX TURBO DIESEL - BALDE 20L (3)","stock":3,"cost_cents":31889},{"code":"PA00426","description":"OLEO PANTHER 15W40 API CH4 ENERGY TDX TURBO DIESEL - CAIXA 24X1L - (6)","stock":40,"cost_cents":1594},{"code":"PA00501","description":"OLEO PANTHER 5W30 API SN ENERGY TDX TURBO SYN+ DIESEL - CX 24X1L - (6)","stock":173,"cost_cents":2790},{"code":"PA00421","description":"OLEO PANTHER 15W40 API CI4 ENERGY TDX TURBO+ DIESEL - 1X5L - (4)","stock":20,"cost_cents":7972}]</script>
+<script>
+const PRODUCTS=JSON.parse(document.getElementById('catalogData').textContent);
+const $=id=>document.getElementById(id), money=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n/100);
+let catalog=[],lines=[],floor=26,marginUnlocked=false,version=0,latest=null,reference='';
+function parsePrice(value){const s=String(value).trim().replace(/\s|R\$/gi,'');if(!s)return NaN;const normalized=s.includes(',')?s.replace(/\./g,'').replace(',','.'):s;return /^\d+(\.\d{1,2})?$/.test(normalized)?Math.round(Number(normalized)*100):NaN}
+function marginValue(){const raw=$('margin').value.trim();if(!/^\d{1,2}([.,]\d{1,2})?$/.test(raw))return NaN;return Number(raw.replace(',','.'))}
+function notice(kind,title){$('notice').className='notice '+kind;$('notice').textContent=title}
+function evaluateLocal(payload){
+ const rate=Number(payload.margin);
+ if(!Number.isFinite(rate)||rate<0||rate>=100||(!marginUnlocked&&rate!==26))throw Error('A margem só pode ser alterada após a senha de autorização.');
+ const results=[];let total=0,approved=true;
+ for(const item of payload.items){const product=PRODUCTS.find(p=>p.code===item.code);if(!product)throw Error('Produto inválido.');
+  const minimum=Math.ceil(product.cost_cents/(1-rate/100)-1e-9),missing=Math.max(0,minimum-item.price_cents),allowed=missing===0;
+  results.push({allowed,missing_unit_cents:missing,missing_total_cents:missing*item.qty,minimum_unit_cents:minimum,stock_warning:item.qty>product.stock});
+  total+=item.price_cents*item.qty;approved=approved&&allowed;
+ }
+ return {approved,lines:results,total_sale_cents:total};
+}
+async function api(path,body){
+ if(path==='/api/catalog')return {margin_floor:'26',products:PRODUCTS.map(({code,description,stock,brand,list_price_cents})=>({code,description,stock,brand:brand||(/PANTHER/i.test(description)?'PANTHER':'RADNAQ'),list_price_cents:list_price_cents||null}))};
+ const result=evaluateLocal(body);
+ if(path==='/api/authorize'){
+  if(!result.approved)throw Error('Venda bloqueada pela margem mínima.');
+  result.reference=new Date().toISOString().replace(/\D/g,'').slice(0,14)+'-'+Math.random().toString(36).slice(2,7).toUpperCase();
+ }
+ return result;
+}
+const normalizeSearch=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+function searchHits(query){const terms=normalizeSearch(query).split(/\s+/).filter(Boolean);if(!terms.length)return catalog.slice(0,10);return catalog.map(p=>{const code=normalizeSearch(p.code),description=normalizeSearch(p.description),all=code+' '+description+' '+normalizeSearch(p.brand||'');if(!terms.every(t=>all.includes(t)))return null;let score=0;for(const t of terms){score+=code===t?100:code.startsWith(t)?50:code.includes(t)?25:description.split(' ').some(w=>w.startsWith(t))?10:1}return {p,score}}).filter(Boolean).sort((a,b)=>b.score-a.score||a.p.code.localeCompare(b.p.code,'pt-BR')).slice(0,12).map(x=>x.p)}
+let searchChoices=[],searchIndex=-1;
+function closeSuggestions(){$('suggestions').hidden=true;$('productSearch').setAttribute('aria-expanded','false');$('productSearch').removeAttribute('aria-activedescendant');searchIndex=-1}
+function highlightSuggestion(){for(const [i,b] of [...$('suggestions').querySelectorAll('.suggestion')].entries()){b.classList.toggle('active',i===searchIndex);b.setAttribute('aria-selected',String(i===searchIndex))}if(searchIndex>=0){const id='suggestion-'+searchIndex;$('productSearch').setAttribute('aria-activedescendant',id);$(id).scrollIntoView({block:'nearest'})}}
+function appendHighlighted(parent,value,terms){
+ const plain=value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const intervals=[];
+ for(const term of terms){if(!term)continue;let pos=0;while((pos=plain.indexOf(term,pos))>=0){intervals.push([pos,pos+term.length]);pos+=term.length}}
+ intervals.sort((a,b)=>a[0]-b[0]);let offset=0;
+ for(const [from,to] of intervals){if(to<=offset)continue;if(from>offset)parent.append(document.createTextNode(value.slice(offset,from)));const mark=document.createElement('mark');mark.textContent=value.slice(Math.max(from,offset),to);parent.append(mark);offset=to}
+ if(offset<value.length)parent.append(document.createTextNode(value.slice(offset)));
+}
+function showSuggestions(){
+ const query=$('productSearch').value;if($('product').value&&query===selectedSearchLabel())return closeSuggestions();
+ searchChoices=searchHits(query);const box=$('suggestions');box.replaceChildren();searchIndex=-1;
+ const header=document.createElement('div'),label=document.createElement('span'),tip=document.createElement('span');header.className='suggestions-header';
+ label.textContent=query.trim()?'RESULTADOS · '+searchChoices.length:'SUGESTÕES DE PRODUTOS';tip.textContent='Selecione um item para continuar';header.append(label,tip);box.append(header);
+ const terms=normalizeSearch(query).split(/\s+/).filter(Boolean);
+ for(const [i,p] of searchChoices.entries()){
+  const b=document.createElement('button'),icon=document.createElement('span'),body=document.createElement('span'),top=document.createElement('span'),code=document.createElement('strong'),brand=document.createElement('span'),desc=document.createElement('small'),tags=document.createElement('span'),arrow=document.createElement('span');
+  const panther=p.brand==='PANTHER'||p.description.toUpperCase().includes('PANTHER');b.type='button';b.id='suggestion-'+i;b.className='suggestion';b.setAttribute('role','option');b.setAttribute('aria-selected','false');b.setAttribute('aria-label',p.code+' · '+p.description);
+  icon.className='suggestion-icon'+(panther?' panther':'');icon.textContent=panther?'P':'R';icon.setAttribute('aria-hidden','true');
+  body.className='suggestion-body';top.className='suggestion-top';code.className='suggestion-code';appendHighlighted(code,p.code,terms);brand.className='suggestion-brand'+(panther?' panther':'');brand.textContent=p.brand|| (panther?'PANTHER':'RADNAQ');top.append(code,brand);
+  desc.className='suggestion-description';appendHighlighted(desc,p.description,terms);tags.className='suggestion-tags';
+  const viscosity=p.description.match(/\b(?:\d{1,2}W\d{1,3}|ATF|SAE 90|HIDRAULICO)\b/i),size=p.description.match(/\b\d+\s*(?:L|ML)\b/i);
+  for(const match of [viscosity,size])if(match){const chip=document.createElement('span');chip.textContent=match[0].toUpperCase();tags.append(chip)}if(p.list_price_cents){const chip=document.createElement('span');chip.textContent='Preço sugerido: '+money(p.list_price_cents);tags.append(chip)}
+  body.append(top,desc);if(tags.childElementCount)body.append(tags);arrow.className='suggestion-arrow';arrow.textContent='›';arrow.setAttribute('aria-hidden','true');b.append(icon,body,arrow);
+  b.addEventListener('mousedown',e=>e.preventDefault());b.addEventListener('click',()=>selectProduct(p));box.append(b);
+ }
+ if(!searchChoices.length){const empty=document.createElement('div'),title=document.createElement('strong'),detail=document.createElement('span');empty.className='suggestion-empty';title.textContent='Nenhum produto encontrado';detail.textContent='Tente outro código, marca ou parte da descrição.';empty.append(title,detail);box.append(empty)}
+ else{const footer=document.createElement('div');footer.className='suggestions-footer';footer.innerHTML='Use <kbd>↑</kbd> <kbd>↓</kbd> para navegar e <kbd>Enter</kbd> para selecionar';box.append(footer)}
+ box.hidden=false;$('productSearch').setAttribute('aria-expanded','true');
+}
+function selectedSearchLabel(){const p=catalog.find(x=>x.code===$('product').value);return p?p.code+' · '+p.description:''}
+function selectProduct(p){$('product').value=p.code;$('productSearch').value=p.code+' · '+p.description;$('unitPrice').value=p.list_price_cents?money(p.list_price_cents).replace('R$','').trim():'';$('formError').textContent='';closeSuggestions();$('quantity').focus()}
+$('productSearch').addEventListener('input',()=>{$('product').value='';showSuggestions()});
+$('productSearch').addEventListener('focus',()=>{if($('product').value)$('productSearch').select();else showSuggestions()});
+$('productSearch').addEventListener('keydown',e=>{if(e.key==='Escape')return closeSuggestions();if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if($('suggestions').hidden)showSuggestions();if(searchChoices.length){searchIndex=(searchIndex+(e.key==='ArrowDown'?1:-1)+searchChoices.length)%searchChoices.length;highlightSuggestion()}}else if(e.key==='Enter'&&!e.isComposing){e.preventDefault();if(!$('suggestions').hidden&&searchChoices.length&&!$('product').value)selectProduct(searchChoices[searchIndex>=0?searchIndex:0]);else if($('product').value){if($('unitPrice').value.trim())$('add').click();else $('quantity').focus()}}});
+document.addEventListener('click',e=>{if(!e.target.closest('.product-search'))closeSuggestions()});
+async function start(){const data=await api('/api/catalog');catalog=data.products;floor=Number(data.margin_floor);$('margin').min='0';$('margin').value=String(floor);$('margin').readOnly=true;$('marginHint').textContent='Padrão: 26%. Para alterar, use a senha de autorização.';render()}
+function validPayload(){const margin=marginValue();if(!Number.isFinite(margin)||margin<0||margin>=100||(!marginUnlocked&&margin!==floor))throw Error('Margem inválida. Use a senha para alterar os 26%.');if(!lines.length)throw Error('Adicione um produto.');return {margin,items:lines.map(x=>{const qty=Number(x.qty),price_cents=parsePrice(x.price);if(!Number.isSafeInteger(qty)||qty<1||qty>100000||!Number.isInteger(price_cents)||price_cents<1)throw Error('Revise preço e quantidade de todos os itens.');return {code:x.code,qty,price_cents}})}}
+function render(){const body=$('items');body.replaceChildren();$('counter').textContent='('+lines.length+')';for(const [index,line] of lines.entries()){const p=catalog.find(x=>x.code===line.code);const tr=document.createElement('tr'),prod=document.createElement('td'),name=document.createElement('strong'),description=document.createElement('small');name.textContent=p.code;description.textContent=p.description;prod.append(name,description);tr.append(prod);for(const [field,klass,label] of [['qty','qty','Quantidade'],['price','price','Preço por unidade']]){const td=document.createElement('td'),input=document.createElement('input');td.className=klass;input.type=field==='qty'?'number':'text';input.inputMode=field==='qty'?'numeric':'decimal';if(field==='qty'){input.min='1';input.step='1'}input.value=line[field];input.setAttribute('aria-label',label+' de '+p.code);input.addEventListener('input',()=>{line[field]=input.value;changed()});td.append(input);tr.append(td)}const cell=document.createElement('td'),result=document.createElement('div');cell.className='result';result.id='result-'+index;result.className='mutedtext';result.textContent='Conferindo…';cell.append(result);tr.append(cell);const last=document.createElement('td'),remove=document.createElement('button');remove.className='remove';remove.type='button';remove.title='Remover item';remove.setAttribute('aria-label','Remover '+p.code);remove.textContent='×';remove.addEventListener('click',()=>{lines.splice(index,1);changed(true)});last.append(remove);tr.append(last);body.append(tr)}if(!lines.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=5;td.style.cssText='text-align:center;padding:29px;color:#8292a0';td.textContent='Nenhum item adicionado.';tr.append(td);body.append(tr)}changed(false)}
+let timer;
+function changed(rebuild=false){if(rebuild)return render();reference='';latest=null;version++;$('authorize').disabled=true;$('copy').disabled=true;$('copy').textContent='Copiar resumo';$('total').textContent='—';$('missing').textContent='—';for(let i=0;i<lines.length;i++){const cell=$('result-'+i);if(cell){cell.className='mutedtext';cell.textContent='Conferindo…'}}notice('','Conferindo os itens…');clearTimeout(timer);const current=version;timer=setTimeout(()=>quote(current),220)}
+async function quote(current){let payload;try{payload=validPayload()}catch(e){if(current===version){notice(lines.length?'warn':'',e.message);for(let i=0;i<lines.length;i++){const cell=$('result-'+i);if(cell){cell.textContent='Aguardando dados válidos';cell.className='mutedtext'}}}return}try{const result=await api('/api/quote',payload);if(current!==version)return;latest=result;$('total').textContent=money(result.total_sale_cents);$('missing').textContent=money(result.lines.reduce((sum,x)=>sum+x.missing_total_cents,0));result.lines.forEach((r,i)=>{const el=$('result-'+i);if(!el)return;el.className=r.allowed?'goodtext':'badtext';el.replaceChildren();const b=document.createElement('b'),small=document.createElement('small');b.textContent=r.allowed?'LIBERADO':'FALTAM '+money(r.missing_total_cents);small.textContent=r.allowed?'Margem atendida.':'Aumente '+money(r.missing_unit_cents)+' por unidade. Preço mínimo: '+money(r.minimum_unit_cents);if(r.stock_warning)small.textContent+=' • Confira o estoque.';el.append(b,small)});notice(result.approved?'good':'bad',result.approved?'Todos os itens atendem à margem. Você pode autorizar.':'Venda bloqueada: ajuste os itens indicados.');$('authorize').disabled=!result.approved;$('copy').disabled=false}catch(e){if(current===version)notice('warn',e.message)}}
+$('add').addEventListener('click',()=>{const code=$('product').value,qty=$('quantity').value,price=$('unitPrice').value;$('formError').textContent='';if(!catalog.some(p=>p.code===code)||!Number.isSafeInteger(Number(qty))||Number(qty)<1||!Number.isInteger(parsePrice(price))||parsePrice(price)<1){$('formError').textContent='Selecione um produto na busca, uma quantidade inteira e um preço válido.';return}lines.push({code,qty,price});$('unitPrice').value='';$('quantity').value='1';$('product').value='';$('productSearch').value='';render();$('productSearch').focus()});
+$('quantity').addEventListener('keydown',e=>{if(e.key!=='Enter'||e.isComposing)return;e.preventDefault();if($('unitPrice').value.trim())$('add').click();else $('unitPrice').focus()});
+$('unitPrice').addEventListener('keydown',e=>{if(e.key!=='Enter'||e.isComposing)return;e.preventDefault();$('add').click()});
+$('unlockMargin').addEventListener('click',()=>{if(!marginUnlocked){$('marginError').textContent='';$('marginPassword').value='';$('marginDialog').showModal();$('marginPassword').focus()}});$('cancelMargin').addEventListener('click',()=>$('marginDialog').close());$('marginForm').addEventListener('submit',e=>{e.preventDefault();if($('marginPassword').value!=='123'){$('marginError').textContent='Senha incorreta.';$('marginPassword').select();return}marginUnlocked=true;$('margin').readOnly=false;$('marginHint').textContent='Edição autorizada nesta sessão. Escolha de 0% a 99,99%.';$('unlockMargin').textContent='✓ Margem liberada';$('unlockMargin').disabled=true;$('marginDialog').close();$('margin').focus()});$('margin').addEventListener('input',changed.bind(null,false));$('clear').addEventListener('click',()=>{lines=[];render()});
+$('authorize').addEventListener('click',async()=>{let payload;try{payload=validPayload()}catch(e){notice('warn',e.message);return}const current=version;$('authorize').disabled=true;try{const r=await api('/api/authorize',payload);if(current!==version)return;reference=r.reference;latest=r;notice('good','VENDA CONFERIDA E AUTORIZADA • Protocolo '+reference);$('copy').disabled=false}catch(e){if(current===version){notice('bad',e.message);quote(current)}}});
+$('copy').addEventListener('click',async()=>{if(!latest)return;const text=['RADNAQ + PANTHER • CONFERÊNCIA DE VENDA','Margem mínima: '+marginValue().toLocaleString('pt-BR')+'%',...lines.map((x,i)=>x.code+' · '+x.qty+' un. · '+money(parsePrice(x.price))+'/un. · '+(latest.lines[i].allowed?'Liberado':'Faltam '+money(latest.lines[i].missing_total_cents))),'Total: '+money(latest.total_sale_cents),reference?'Autorização: '+reference:'Status: pendente de autorização'].join('\n');try{await navigator.clipboard.writeText(text);$('copy').textContent='✓ Copiado'}catch{notice('warn','Seu navegador não permitiu copiar o resumo.')}});
+
+const CATALOG_KEY='radnaq_panther_catalog_'+[...$('catalogData').textContent].reduce((h,c)=>((h*31+c.charCodeAt(0))>>>0),0);
+let catalogUnlocked=false,editingCode=null;
+window.catalogCloudReady=false;
+window.databaseConnectionInfo=message=>{$('databaseInfo').textContent=message};
+function brandOf(p){return p.brand||(/PANTHER/i.test(p.description)?'PANTHER':'RADNAQ')}
+function catalogIsValid(list){return Array.isArray(list)&&list.length>0&&list.length<=5000&&list.every(p=>p&&typeof p.code==='string'&&p.code.length<=80&&typeof p.description==='string'&&p.description.length<=260&&Number.isSafeInteger(p.cost_cents)&&p.cost_cents>0&&Number.isSafeInteger(p.stock)&&p.stock>=0&&(p.list_price_cents==null||Number.isSafeInteger(p.list_price_cents)&&p.list_price_cents>0))&&new Set(list.map(p=>p.code.toLocaleUpperCase('pt-BR'))).size===list.length}
+function loadSavedCatalog(){try{const saved=JSON.parse(localStorage.getItem(CATALOG_KEY));if(catalogIsValid(saved))PRODUCTS.splice(0,PRODUCTS.length,...saved)}catch(e){/* Arquivo local sem armazenamento disponível: usa o catálogo incorporado. */}}
+function syncCatalog(){
+ catalog=PRODUCTS.map(({code,description,stock,brand,list_price_cents})=>({code,description,stock,brand:brand||(/PANTHER/i.test(description)?'PANTHER':'RADNAQ'),list_price_cents:list_price_cents||null}));
+ $('catalogData').textContent=JSON.stringify(PRODUCTS).replace(/</g,'\\u003c');
+ if($('product').value){const p=catalog.find(x=>x.code===$('product').value);if(p)$('productSearch').value=p.code+' · '+p.description;else{$('product').value='';$('productSearch').value=''}}
+ render();renderCatalogRows();
+}
+function renderCatalogRows(){
+ const q=normalizeSearch($('catalogSearch').value),items=PRODUCTS.filter(p=>normalizeSearch(p.code+' '+p.description+' '+brandOf(p)).includes(q));
+ $('catalogCount').textContent=items.length+' de '+PRODUCTS.length+' produtos';const box=$('catalogRows');box.replaceChildren();
+ for(const p of items){
+  const row=document.createElement('div'),info=document.createElement('button'),code=document.createElement('strong'),desc=document.createElement('small'),actions=document.createElement('div');
+  row.className='catalog-row'+(editingCode===p.code?' active':'');info.type='button';info.className='catalog-row-info';info.setAttribute('aria-label','Editar '+p.code);code.textContent=p.code+' · '+brandOf(p);desc.textContent=p.description;info.append(code,desc);info.addEventListener('click',()=>editProduct(p.code));
+  actions.className='catalog-row-actions';for(const [title,label,fn] of [['Editar','Editar',()=>editProduct(p.code)],['Copiar','Copiar',()=>{editProduct(p.code);newProduct(true)}],['Excluir','Excluir',()=>deleteProduct(p.code)]]){const button=document.createElement('button');button.type='button';button.textContent=label;button.setAttribute('aria-label',title+' produto '+p.code);if(title==='Excluir')button.className='delete-product';button.addEventListener('click',fn);actions.append(button)}
+  row.append(info,actions);box.append(row)
+ }
+ if(!items.length){const empty=document.createElement('p');empty.className='catalog-count';empty.textContent='Nenhum produto encontrado.';box.append(empty)}
+}
+function editProduct(code){
+ const p=PRODUCTS.find(x=>x.code===code);if(!p)return;editingCode=code;$('editorTitle').textContent='Editar '+code;$('editorHint').textContent='Altere o preço, o custo ou os dados do cadastro e salve.';
+ $('editCode').value=p.code;$('editBrand').value=['RADNAQ','PANTHER'].includes(brandOf(p))?brandOf(p):'OUTRA';$('editDescription').value=p.description;$('editCost').value=money(p.cost_cents).replace('R$','').trim();$('editListPrice').value=p.list_price_cents?money(p.list_price_cents).replace('R$','').trim():'';$('editStock').value=p.stock;
+ $('editorError').textContent='';renderCatalogRows();
+}
+async function deleteProduct(code){
+ if(!catalogUnlocked)return;const index=PRODUCTS.findIndex(p=>p.code===code);if(index<0)return;
+ if(PRODUCTS.length===1){$('editorError').textContent='Mantenha ao menos um produto no catálogo.';return}
+ if(!confirm('Excluir o produto '+code+' do catálogo? Ele também será retirado desta venda, se estiver nela.'))return;
+ try{await window.catalogCloudDelete(code,PRODUCTS[index])}catch(e){$('editorError').textContent='Não foi possível excluir no banco: '+e.message;return}
+ lines=lines.filter(x=>x.code!==code);if($('product').value===code){$('product').value='';$('productSearch').value='';$('unitPrice').value=''}
+ if(editingCode===code)editingCode=null;
+ const localIndex=PRODUCTS.findIndex(p=>p.code===code);if(localIndex>=0)PRODUCTS.splice(localIndex,1);syncCatalog();if(PRODUCTS.length)editProduct(PRODUCTS[Math.min(index,PRODUCTS.length-1)].code);else newProduct(false);
+ $('editorError').textContent='✓ Produto '+code+' excluído do banco compartilhado.';
+}
+function newProduct(copy=false){
+ const source=copy&&editingCode?PRODUCTS.find(p=>p.code===editingCode):null;if(copy&&!source){$('editorError').textContent='Selecione um produto na lista antes de copiar.';return}
+ editingCode=null;$('editorTitle').textContent=source?'Cópia de '+source.code:'Novo produto';$('editorHint').textContent=source?'Informe um novo código e ajuste os dados copiados.':'Preencha os dados para adicionar o produto à busca.';
+ $('editCode').value='';$('editBrand').value=source?(['RADNAQ','PANTHER'].includes(brandOf(source))?brandOf(source):'OUTRA'):'RADNAQ';$('editDescription').value=source?.description||'';$('editCost').value=source?money(source.cost_cents).replace('R$','').trim():'';$('editListPrice').value=source?.list_price_cents?money(source.list_price_cents).replace('R$','').trim():'';$('editStock').value=source?.stock??0;$('editorError').textContent='';renderCatalogRows();$('editCode').focus();
+}
+async function saveProduct(e){
+ e.preventDefault();if(!catalogUnlocked)return;const code=$('editCode').value.trim(),description=$('editDescription').value.trim(),cost=parsePrice($('editCost').value),listRaw=$('editListPrice').value.trim(),listPrice=listRaw?parsePrice(listRaw):null,stock=Number($('editStock').value);
+ if(!code||!description||!Number.isSafeInteger(cost)||cost<=0||cost>100000000||listRaw&&(!Number.isSafeInteger(listPrice)||listPrice<=0)||!Number.isSafeInteger(stock)||stock<0||stock>1000000){$('editorError').textContent='Confira código, descrição, valores e estoque. Use valores positivos.';return}
+ if(PRODUCTS.some(p=>p.code.toLocaleUpperCase('pt-BR')===code.toLocaleUpperCase('pt-BR')&&p.code!==editingCode)){$('editorError').textContent='Este código já existe no catálogo.';return}
+ const item={code,description,brand:$('editBrand').value,stock,cost_cents:cost,list_price_cents:listPrice};
+ try{await window.catalogCloudSave(editingCode,item,editingCode?PRODUCTS.find(p=>p.code===editingCode):null)}catch(e){$('editorError').textContent='Não foi possível salvar no banco: '+e.message;return}
+ if(editingCode){const index=PRODUCTS.findIndex(p=>p.code===editingCode);if(index>=0)PRODUCTS[index]=item;else if(!PRODUCTS.some(p=>p.code===code))PRODUCTS.push(item);for(const line of lines)if(line.code===editingCode)line.code=code;if($('product').value===editingCode)$('product').value=code}
+ else if(!PRODUCTS.some(p=>p.code===code))PRODUCTS.push(item);
+ editingCode=code;$('editorError').textContent='✓ Produto salvo. A busca e os cálculos foram atualizados.';
+ syncCatalog();$('editorTitle').textContent='Editar '+code;$('editorHint').textContent='Cadastro salvo. Continue editando ou escolha outro item.';
+}
+function downloadUpdatedHtml(){
+ if(!catalogUnlocked)return;const clone=document.documentElement.cloneNode(true);clone.querySelector('#catalogData').textContent=JSON.stringify(PRODUCTS).replace(/</g,'\\u003c');
+ for(const dialog of clone.querySelectorAll('dialog'))dialog.removeAttribute('open');clone.querySelector('#catalogRows').replaceChildren();clone.querySelector('#suggestions').replaceChildren();clone.querySelector('#suggestions').setAttribute('hidden','');
+ clone.querySelector('#items').replaceChildren();const html='<!doctype html>\n'+clone.outerHTML;
+ const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='Simulador_Radnaq_Panther_atualizado.html';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+}
+$('openCatalog').addEventListener('click',()=>{if(catalogUnlocked){$('catalogDialog').showModal();renderCatalogRows();return}$('catalogAuthError').textContent='';$('catalogPassword').value='';$('catalogAuth').showModal();$('catalogPassword').focus()});
+$('cancelCatalogAuth').addEventListener('click',()=>$('catalogAuth').close());
+$('catalogAuthForm').addEventListener('submit',e=>{e.preventDefault();if($('catalogPassword').value!=='123'){$('catalogAuthError').textContent='Senha incorreta.';$('catalogPassword').select();return}catalogUnlocked=true;$('catalogPassword').value='';$('catalogAuth').close();$('catalogDialog').showModal();editProduct(PRODUCTS[0]?.code)});
+$('closeCatalog').addEventListener('click',()=>$('catalogDialog').close());$('catalogSearch').addEventListener('input',renderCatalogRows);
+$('retryDatabase').addEventListener('click',()=>{if(window.retryCatalogDatabase)window.retryCatalogDatabase();else window.databaseConnectionInfo('O módulo Firebase não carregou. Verifique sua internet e abra o HTML novamente.')});
+$('newProduct').addEventListener('click',()=>newProduct(false));$('duplicateProduct').addEventListener('click',()=>newProduct(true));$('productForm').addEventListener('submit',saveProduct);$('downloadCatalogHtml').addEventListener('click',downloadUpdatedHtml);
+loadSavedCatalog();start();
+window.applyCloudCatalog=(list)=>{if(!catalogIsValid(list))throw Error('O catálogo recebido do banco é inválido.');PRODUCTS.splice(0,PRODUCTS.length,...list);lines=lines.filter(x=>PRODUCTS.some(p=>p.code===x.code));syncCatalog()};
+setTimeout(()=>{if(!window.retryCatalogDatabase){$('cloudStatus').textContent='Firebase indisponível • sem conexão';window.databaseConnectionInfo('O módulo Firebase não carregou. Verifique sua internet e abra o HTML novamente.')}},12000);
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getFirestore, doc, getDocFromServer, onSnapshot, runTransaction, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+// Mesmo projeto Firestore do MTX. Coleção própria para não alterar pedidos_mtx.
+const firebaseConfig = {
+  apiKey: "AIzaSyB0_kv4kQfcTdT7D5_Imf5NrG4EvY1p0lQ",
+  authDomain: "base-de-dados-pedidos-mtx.firebaseapp.com",
+  projectId: "base-de-dados-pedidos-mtx",
+  storageBucket: "base-de-dados-pedidos-mtx.firebasestorage.app",
+  messagingSenderId: "702134531011",
+  appId: "1:702134531011:web:debe80ae3577602aec8376"
+};
+const db = getFirestore(initializeApp(firebaseConfig));
+const catalogRef = doc(db, 'simulador_radnaq_panther', 'catalogo');
+const status = document.getElementById('cloudStatus');
+let mutationPending = false, queuedCatalog = null;
+function setStatus(message) { status.textContent = message; window.databaseConnectionInfo(message); }
+function validProduct(p) { return p && typeof p.code === 'string' && typeof p.description === 'string' && Number.isSafeInteger(p.cost_cents) && p.cost_cents > 0 && Number.isSafeInteger(p.stock) && p.stock >= 0; }
+function same(a,b) { return JSON.stringify(a) === JSON.stringify(b); }
+function explain(error) {
+  if(error?.code === 'permission-denied') return 'acesso negado pelas regras do Firestore. Autorize a coleção simulador_radnaq_panther no projeto MTX.';
+  if(error?.code === 'unavailable') return 'sem conexão com o Firestore. Confira a internet e tente novamente.';
+  return error?.message || 'erro de conexão com o banco.';
+}
+async function mutate(previousCode, item, previousItem) {
+  if(!window.catalogCloudReady) throw Error('Aguarde a conexão com o banco MTX.');
+  if(mutationPending) throw Error('Aguarde o salvamento anterior terminar.');
+  mutationPending = true;
+  try {
+    await runTransaction(db, async transaction => {
+      const snap = await transaction.get(catalogRef);
+      if(!snap.exists()) throw Error('O catálogo ainda não foi inicializado.');
+      const list = snap.data().products;
+      if(!Array.isArray(list) || !list.every(validProduct)) throw Error('O catálogo no banco está inválido.');
+      const index = previousCode == null ? -1 : list.findIndex(p => p.code === previousCode);
+      if(previousCode != null && index < 0) throw Error('Este produto foi alterado ou excluído em outra tela. Atualize e tente novamente.');
+      if(index >= 0 && !same(list[index], previousItem)) throw Error('Este produto mudou em outra tela. Confira os novos dados antes de salvar.');
+      if(item && list.some((p,i) => i !== index && p.code.toLocaleUpperCase('pt-BR') === item.code.toLocaleUpperCase('pt-BR'))) throw Error('Este código já existe no catálogo compartilhado.');
+      if(index >= 0) { if(item) list[index] = item; else { if(list.length === 1) throw Error('Mantenha ao menos um produto.'); list.splice(index,1); } }
+      else if(item) list.push(item);
+      else throw Error('Produto não encontrado.');
+      transaction.update(catalogRef, {products:list, updatedAt:serverTimestamp()});
+    });
+  } catch(error) { throw Error(explain(error)); }
+  finally {
+    // Deixe o formulário aplicar o resultado antes de renderizar o snapshot da própria alteração.
+    setTimeout(() => {
+      mutationPending = false;
+      if(queuedCatalog) {
+        const list = queuedCatalog; queuedCatalog = null;
+        window.applyCloudCatalog(list);
+      }
+    }, 0);
+  }
+}
+window.catalogCloudSave = (oldCode,item,previousItem) => mutate(oldCode,item,previousItem);
+window.catalogCloudDelete = (oldCode,previousItem) => mutate(oldCode,null,previousItem);
+
+let unsubscribe = null, connecting = false;
+async function connect() {
+  if(connecting) return;
+  connecting = true;
+  window.catalogCloudReady = false;
+  setStatus('Verificando acesso ao Firestore do MTX…');
+  try {
+    // Só cria o catálogo se ele ainda não existir. Não mistura produtos com pedidos_mtx.
+    const initial = await getDocFromServer(catalogRef);
+    if(!initial.exists()) {
+      const seed = JSON.parse(document.getElementById('catalogData').textContent);
+      await runTransaction(db, async transaction => {
+        const existing = await transaction.get(catalogRef);
+        if(!existing.exists()) transaction.set(catalogRef,{products:seed,updatedAt:serverTimestamp()});
+      });
+    }
+    if(unsubscribe) unsubscribe();
+    unsubscribe = onSnapshot(catalogRef, {includeMetadataChanges:true}, snapshot => {
+      if(!snapshot.exists() || snapshot.metadata.fromCache) {
+        window.catalogCloudReady = false;
+        setStatus('Sem confirmação do banco MTX • catálogo local somente para consulta');
+        return;
+      }
+      try {
+        if(mutationPending) queuedCatalog = snapshot.data().products;
+        else window.applyCloudCatalog(snapshot.data().products);
+        window.catalogCloudReady = true;
+        setStatus('Banco MTX conectado • produtos sincronizados');
+      } catch(error) {
+        window.catalogCloudReady = false;
+        setStatus('Dados do catálogo no banco inválidos • edição bloqueada');
+      }
+    }, error => {
+      window.catalogCloudReady = false;
+      setStatus('Erro no banco MTX • '+explain(error));
+      unsubscribe = null;
+    });
+  } catch(error) {
+    window.catalogCloudReady = false;
+    setStatus('Erro no banco MTX • '+explain(error));
+  } finally { connecting = false; }
+}
+window.retryCatalogDatabase = connect;
+connect();
+</script>
+</body></html>
